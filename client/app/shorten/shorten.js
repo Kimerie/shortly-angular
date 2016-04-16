@@ -5,7 +5,9 @@ angular.module('shortly.shorten', [])
   console.log('in ShortenController')
   $scope.link = {};
   $scope.addLink = function(link) {
-    Links.addLink(link);
+    console.log('LINK INSIDE SHORTEN JS:', link);
+    // Links.addLink(link);
+    $scope.link[link] = Links.addLink(link);
   };
 
   }]);

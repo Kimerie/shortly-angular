@@ -14,15 +14,19 @@ angular.module('shortly.services', [])
   };
 
   var addLink = function(link){
+    console.log('this is link inside services js:', link);
   return $http({
       method: 'POST',
       url: '/api/links',
-      data: {url: link}
+      data: link
+      // headers: {'Content-Type' : 'application/multipart/form-data' }
     })
     .then(function (resp) {
+      console.log('post success')
       return resp.data;
-    });
-  };
+      })
+
+};
   // console.log(links);
 
   return {

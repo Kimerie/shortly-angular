@@ -33,8 +33,10 @@ module.exports = {
   },
 
   newLink: function (req, res, next) {
+    console.log('here is request:', req);
+    console.log('Here is req.body:', req.body)
     var url = req.body.url;
-    console.log('HERE IS CONSOLE LOG REQ>BODY:', req.body);
+    console.log('HERE IS CONSOLE for url:', url);
     if (!util.isValidUrl(url)) {
       return next(new Error('Not a valid url'));
     }
