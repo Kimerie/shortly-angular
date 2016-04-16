@@ -1,4 +1,6 @@
 <div ng-controller='LinksController' id='container'>
   <!-- Your html here -->
-  <div> {{Links:Links}}</div>
+  <ul>
+  <li ng-repeat="(links, link) in $scope.data"> {{link}} </li>
+</ul>
 </div>
